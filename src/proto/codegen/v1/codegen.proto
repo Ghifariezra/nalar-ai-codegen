@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package codegen.v1;
+
+// Input dari user
+message GenerateRequest {
+  string prompt = 1;
+}
+
+// Output dari AI (dikirim potong-potongan/stream)
+message GenerateResponse {
+  string code_chunk = 1;
+}
+
+// Service Definition
+service CodeGenService {
+  rpc GenerateStream(GenerateRequest) returns (stream GenerateResponse);
+}
