@@ -24,14 +24,14 @@
 
 1. **Clone repository**:
    ```bash
-   git clone [https://github.com/Ghifariezra/nalar-ai-codegen.git](https://github.com/Ghifariezra/nalar-ai-codegen.git)
+   git clone https://github.com/Ghifariezra/nalar-ai-codegen.git
    ```
 
 2. **Konfigurasi Environment:**
    Buat file `.env.local` di direktori root client:
    ```bash
    # Endpoint Server (Railway/Local)
-NEXT_PUBLIC_API_BASE_URL=[your-endpoint](#)
+   NEXT_PUBLIC_API_BASE_URL=your-endpoint
    ```
 
 3. Install dependencies:
