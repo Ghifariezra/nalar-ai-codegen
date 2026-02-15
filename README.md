@@ -1,4 +1,4 @@
-# 🧠 Nalar — AI Code Architect (v1.0.2-beta)
+# 🧠 Nalar — AI Code Architect (v1.0.3-beta)
 
 **Nalar** adalah platform generasi kode berbasis AI yang dirancang untuk merakit logika pemrograman dan arsitektur perangkat lunak secara instan dengan output berkualitas tinggi.
 
@@ -6,11 +6,11 @@
 
 ## 🚀 Fitur Utama
 - **Real-time Streaming**: Menggunakan ConnectRPC (gRPC) untuk pengiriman potongan kode secara langsung (streaming) tanpa jeda.
-- **Smart Validation**: Input prompt yang divalidasi ketat menggunakan Zod & React Hook Form dengan batasan 10 hingga 2000 karakter.
+- **Smart Validation**: Input prompt divalidasi ketat menggunakan Zod & React Hook Form dengan batasan 10 hingga 2000 karakter.
 - **Multi-Level Personas**: Mendukung generasi kode spesifik untuk level **Junior**, **Senior**, dan **Architect** untuk akurasi teknis yang lebih baik.
-- **Architecture Guidelines**: Integrasi panduan penggunaan dan tips prompting efektif melalui sistem **Accordion Manager** yang telah dioptimasi.
-- **Professional MDX Rendering**: Output kode dirakit menggunakan MDX dengan syntax highlighting modern dan tabel perbandingan yang responsif.
-- **Modern UI/UX**: Antarmuka gelap (dark mode) yang elegan dengan sistem *sticky layout* dan *custom scrollbar* transparan.
+- **Fully Responsive UI**: Antarmuka yang telah dioptimasi untuk perangkat seluler, memperbaiki masalah *layout overflow* dan *content clipping* pada layar kecil.
+- **Architecture Guidelines**: Integrasi panduan penggunaan dan tips prompting efektif melalui sistem **Accordion Manager** yang telah diperbaiki jalurnya.
+- **Professional MDX Rendering**: Output kode dirakit menggunakan MDX dengan syntax highlighting modern dan sistem kontainer yang mendukung *internal scrolling*.
 
 ## 🛠️ Tech Stack
 - **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
