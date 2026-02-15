@@ -1,4 +1,4 @@
-# 🧠 Nalar — AI Code Architect (v1.0.0-beta)
+# 🧠 Nalar — AI Code Architect (v1.0.2-beta)
 
 **Nalar** adalah platform generasi kode berbasis AI yang dirancang untuk merakit logika pemrograman dan arsitektur perangkat lunak secara instan dengan output berkualitas tinggi.
 
@@ -6,13 +6,13 @@
 
 ## 🚀 Fitur Utama
 - **Real-time Streaming**: Menggunakan ConnectRPC (gRPC) untuk pengiriman potongan kode secara langsung (streaming) tanpa jeda.
-- **Smart Validation**: Input prompt yang divalidasi ketat menggunakan Zod & React Hook Form (Min. 10 - Max. 2000 karakter).
-- **Professional MDX Rendering**: Output kode dan tips yang dirakit menggunakan MDX dengan styling modern, syntax highlighting, dan tabel perbandingan yang responsif.
-- **Modern UI/UX**: Antarmuka gelap (dark mode) yang elegan dengan scrollbar transparan dan animasi halus.
-- **High Standards**: Dikembangkan dengan Biome Lint untuk menjamin konsistensi dan kualitas kode tingkat tinggi.
+- **Smart Validation**: Input prompt yang divalidasi ketat menggunakan Zod & React Hook Form dengan batasan 10 hingga 2000 karakter.
+- **Multi-Level Personas**: Mendukung generasi kode spesifik untuk level **Junior**, **Senior**, dan **Architect** untuk akurasi teknis yang lebih baik.
+- **Architecture Guidelines**: Integrasi panduan penggunaan dan tips prompting efektif melalui sistem **Accordion Manager** yang telah dioptimasi.
+- **Professional MDX Rendering**: Output kode dirakit menggunakan MDX dengan syntax highlighting modern dan tabel perbandingan yang responsif.
+- **Modern UI/UX**: Antarmuka gelap (dark mode) yang elegan dengan sistem *sticky layout* dan *custom scrollbar* transparan.
 
 ## 🛠️ Tech Stack
-
 - **Framework**: [Next.js 15 (App Router)](https://nextjs.org/)
 - **API Protocol**: [ConnectRPC](https://connectrpc.com/) (gRPC for Web)
 - **Styling**: Tailwind CSS & Shadcn UI
@@ -22,22 +22,29 @@
 
 ## 📦 Jalankan Lokal
 
-1. Clone repository:
+1. **Clone repository**:
    ```bash
-   git clone [https://github.com/username/nalar-architect-client.git](https://github.com/username/nalar-architect-client.git)
+   git clone [https://github.com/Ghifariezra/nalar-ai-codegen.git](https://github.com/Ghifariezra/nalar-ai-codegen.git)
    ```
 
-2. Install dependencies:
+2. **Konfigurasi Environment:**
+   Buat file `.env.local` di direktori root client:
+   ```bash
+   # Endpoint Server (Railway/Local)
+NEXT_PUBLIC_API_BASE_URL=[your-endpoint](#)
+   ```
+
+3. Install dependencies:
    ```bash
    pnpm install
    ```
 
-3. Jalankan development server:
+4. Jalankan development server:
    ```bash
    pnpm dev
    ```
 
-4. Akses aplikasi di [http://localhost:3000](http://localhost:3000)
+5. Akses aplikasi di [http://localhost:3000](http://localhost:3000)
 
 ## 🧪 Pemeriksaan Kode
 Proyek ini menggunakan Biome untuk menjaga kualitas kode. Pastikan untuk menjalankan check sebelum melakukan commit:
