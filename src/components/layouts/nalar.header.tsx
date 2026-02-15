@@ -26,7 +26,7 @@ export const NalarHeader = memo(function NalarHeader() {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-500"></span>
                     </span>
-                    <span className="font-mono text-[10px]">v1.0.0-beta</span>
+                    <span className="font-mono text-[10px]">v1.0.3-beta</span>
                 </Badge>
             </div>
         </header>

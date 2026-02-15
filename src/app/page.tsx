@@ -49,7 +49,7 @@ export default function Home() {
           </div>
 
           {/* Kolom Kanan: Output (8 kolom) */}
-          <div className="lg:col-span-8 h-full">
+          <div className="lg:col-span-8 w-full min-w-0 overflow-hidden">
             <NalarOutput code={code} error={error} isLoading={isLoading} />
           </div>
         </div>

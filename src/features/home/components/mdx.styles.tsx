@@ -77,8 +77,8 @@ export const sharedMDXComponents = {
     <h3 className="text-lg font-medium mb-3 text-zinc-200 mt-6">{children}</h3>
   ),
   p: ({ children }: JSX.IntrinsicElements["p"]) => (
-    // Ganti 'wrap-break-word' menjadi 'break-words'
-    <p className="mb-5 text-zinc-400 leading-relaxed tracking-wide break-words whitespace-pre-wrap">
+    // Ganti 'wrap-break-word' menjadi 'break-all'
+    <p className="mb-5 text-zinc-400 leading-relaxed tracking-wide break-all whitespace-pre-wrap">
       {children}
     </p>
   ),
@@ -93,7 +93,7 @@ export const sharedMDXComponents = {
       {/* PENTING: Gunakan 'min-w-0' dan 'flex-1' agar container anak 
          menghormati batas lebar flexbox parent-nya.
       */}
-      <div className="flex-1 min-w-0 break-words overflow-hidden">
+      <div className="flex-1 min-w-0 break-all overflow-hidden">
         {children}
       </div>
     </li>
@@ -116,7 +116,7 @@ export const sharedMDXComponents = {
       <CodeBlock language={match[1]} value={content} />
     ) : (
       <code
-        // Tambahkan 'break-all' atau 'break-words' untuk inline code yang sangat panjang
+        // Tambahkan 'break-all' atau 'break-all' untuk inline code yang sangat panjang
         className="bg-zinc-800/50 text-indigo-300 px-1.5 py-0.5 rounded text-[13px] font-mono border border-zinc-700/30 break-all overflow-wrap-anywhere"
         {...props}
       >
