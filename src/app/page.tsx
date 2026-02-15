@@ -1,47 +1,21 @@
 "use client";
 
-import { Cpu } from "lucide-react";
+import { Cpu, Lightbulb, ShieldCheck } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { NalarInput } from "@/features/home/components/nalar.input";
 import { NalarOutput } from "@/features/home/components/nalar.outpu";
-import { NalarTips } from "@/features/home/components/nalar.tips";
 import { useNalar } from "@/features/home/hooks/use.nalar";
+import { AccordionManager } from "@/components/shared/accordion.manager";
+import TipsContent from "@/constants/content/tips.content.md";
+import UserGuidelines from "@/constants/guidelines/user.guidelines.md";
 
 export default function Home() {
   const { code, isLoading, error, generateCode } = useNalar();
 
   return (
     <main className="min-h-screen bg-black text-zinc-100 selection:bg-indigo-500/30">
-      {/* 1. Navbar / Header */}
-      <header className="border-b border-zinc-900 bg-black/50 backdrop-blur-md sticky top-0 z-10">
-        <div className="w-full px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            {/* Jika belum ada logo, pakai Icon CPU sementara */}
-            <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(79,70,229,0.5)]">
-              <Cpu className="text-white w-5 h-5" />
-            </div>
-            <div>
-              <h1 className="font-bold text-lg tracking-tight">Nalar</h1>
-              <p className="text-[10px] text-zinc-500 uppercase tracking-widest font-medium">
-                AI Code Architect
-              </p>
-            </div>
-          </div>
-          <Badge
-            variant="secondary"
-            className="hidden md:inline-flex h-6 bg-indigo-500/10 text-indigo-400 hover:bg-indigo-500/20 border border-indigo-500/20 transition-all gap-1.5"
-          >
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-indigo-500"></span>
-            </span>
-            <span className="font-mono text-[10px]">v1.0.0-beta</span>
-          </Badge>
-        </div>
-      </header>
-
       {/* 2. Main Content */}
-      <div className="w-full px-4 py-8 lg:h-[calc(100vh-64px)]">
+      <div className="w-full px-4 py-8 lg:min-h-[calc(100vh-64px)] flex-1">
         <div className="grid lg:grid-cols-12 gap-6 h-full">
           {/* Kolom Kiri: Input (4 kolom) */}
           <div className="lg:col-span-4 flex flex-col gap-6">
@@ -57,8 +31,21 @@ export default function Home() {
 
             <NalarInput isLoading={isLoading} onGenerate={generateCode} />
 
-            {/* Tips Section */}
-            <NalarTips />
+            {/* Accordion Group dengan Scrollable Area jika konten panjang */}
+            <div className="flex flex-col gap-3 overflow-y-auto pr-2 custom-scrollbar">
+              <AccordionManager
+                value="tips"
+                icon={<Lightbulb className="w-4 h-4 text-amber-400" />}
+                title="Tips Prompting Efektif"
+                content={<TipsContent />}
+              />
+              <AccordionManager
+                value="guidelines"
+                icon={<ShieldCheck className="w-4 h-4 text-indigo-400" />}
+                title="Panduan Penggunaan Nalar"
+                content={<UserGuidelines />}
+              />
+            </div>
           </div>
 
           {/* Kolom Kanan: Output (8 kolom) */}

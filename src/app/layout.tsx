@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { NalarFooter } from "@/components/layouts/nalar.footer";
+import { NalarHeader } from "@/components/layouts/nalar.header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -71,6 +73,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black text-zinc-100 selection:bg-indigo-500/30  custom-scrollbar`}
       >
+        <NalarHeader />
         {children}
         <Toaster
           position="top-right"
@@ -78,6 +81,7 @@ export default function RootLayout({
             className: "bg-zinc-900 border border-zinc-800 text-zinc-100",
           }}
         />
+        <NalarFooter />
       </body>
     </html>
   );
